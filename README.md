@@ -1,2 +1,7 @@
 # kernelbuild_google_colab_script
-personal use
+```
+!sh setup_colab.sh
+```
+```
+!sh kernel_build.sh
+```
