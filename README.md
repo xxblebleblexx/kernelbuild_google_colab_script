@@ -1,4 +1,4 @@
-# kernelbuild_google_colab_script
+# Upload the file then run this line on google colab
 ```
 !sh setup_colab.sh
 ```
