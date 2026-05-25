@@ -17,18 +17,17 @@ curl -LSs "https://raw.githubusercontent.com/xxblebleblexx/MultiSU/refs/heads/le
 #KSU ACTIVATION
 echo "CONFIG_KSU=y" >> $defconfig
 
-if ["$hooks" = "kprobes"]; then
+if [ "$hooks" = "kprobes" ]; then
 #KPROBES HOOK
 echo "CONFIG_KPROBES=y" >> $defconfig
 echo "CONFIG_KPROBE_EVENTS=y" >> $defconfig
 echo "CONFIG_KSU_KPROBES_HOOK=y" >> $defconfig
-wait
 fi
 
-if ["$hooks" = "manual"]; then
+if [ "$hooks" = "manual" ]; then
 #MANUAL HOOK
 echo "CONFIG_KSU_MANUAL_HOOK=y" >> $defconfig
-wget https://github.com/xxblebleblexx/manual_hook_fix/blob/main/manualhook_1.6_fixed.patch;wait;patch -p1 < manualhook_1.6_fixed.patch
+wget https://raw.githubusercontent.com/xxblebleblexx/manual_hook_fix/refs/heads/main/manualhook_1.6_fixed.patch;wait;patch -p1 < manualhook_1.6_fixed.patch
 fi
 
 export PATH=$clang_path:$PATH
